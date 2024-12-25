@@ -80,4 +80,13 @@
     font-size: 0.9rem;
     margin-top: 20px;
   }
+  .social-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #000; /* Adjust the color to match your theme */
+  }
+  
+  .social-icon:hover {
+    color: #0073e6; /* Change the color when hovered, for example */
+  }
   

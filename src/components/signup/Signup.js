@@ -10,6 +10,7 @@ export default function Signup() {
     const [name, setName] = useState("");
     const [ag, setAg] = useState("");
     const [error, setError] = useState(""); // To store validation error messages
+    const [loading, setLoading] = useState(false); // To manage loading state
     const dispatch = useDispatch();
 
     const validateForm = () => {
@@ -29,19 +30,23 @@ export default function Signup() {
         return true;
     };
 
-    const  signupHandler = () => {
+    const signupHandler = async () => {
         if (validateForm()) {
+            setLoading(true); // Start loading
             const newUser = { name, email, password, ag };
-              dispatch(signup(newUser));
-             setTimeout(() => {
-                alert("Signup successfully now login it again")
-                
-            }, 500); // Dispatch signup action
-            console.log(newUser); 
-            setAg("")
-            setEmail("")
-            setPassword("")
-            setName("")
+            try {
+                await dispatch(signup(newUser)); // Dispatch signup action
+                setAg("");
+                setEmail("");
+                setPassword("");
+                setName("");
+            } catch (error) {
+                console.error("Signup failed", error);
+                setError("An error occurred. Please try again.");
+            } finally {
+                setLoading(false); // Stop loading
+            }
+            console.log(newUser);
         }
     };
 
@@ -82,14 +87,23 @@ export default function Signup() {
                         <input
                             value={ag}
                             type="text"
-                            placeholder="Age"
+                            placeholder="Your year"
                             onChange={(e) => setAg(e.target.value)}
                             className="form-control"
                         />
                     </div>
                     <div className="text-center">
-                        <button type="button" onClick={signupHandler} className="buttonDesign1">
-                            Sign Up
+                        <button
+                            type="button"
+                            onClick={signupHandler}
+                            className="buttonDesign1"
+                            disabled={loading} // Disable the button during loading
+                        >
+                            {loading ? (
+                                <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            ) : (
+                                "Sign Up"
+                            )}
                         </button>
                         <div className="mt-3">
                             <p className="mb-0 text-light">Already have an account?</p>
