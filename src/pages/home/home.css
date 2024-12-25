@@ -1,0 +1,254 @@
+.container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .notes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 30px;
+    justify-content: center;
+  }
+  
+  .note-card {
+    background: linear-gradient(135deg, #f9fafb, #e9ecef);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .note-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.15), rgba(0, 0, 0, 0));
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .note-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  .note-card:hover::before {
+    opacity: 1;
+  }
+  
+  .card-body {
+    position: relative;
+    z-index: 1;
+  }
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #ffffff; /* White text color */
+    margin-bottom: 3px;
+    text-shadow: 
+      1px 1px 2px black,   /* Shadow to the right and bottom */
+      -1px -1px 2px black, /* Shadow to the left and top */
+      0px 0px 5px black;   /* Stronger center shadow for the outline effect */
+  }
+  
+  .card-text {
+    color: #ffecec; /* Text color */
+    font-size: 1.3rem;
+    border-bottom: #f7f5f5;
+    line-height: 1.6;
+    text-shadow: 
+      5px 4px 7px rgba(0, 0, 0, 0.4),   /* Light shadow for depth */
+      1px 4px 6px rgba(0, 0, 0, 0.4), /* Opposite shadow for a strong outline */
+      6px 0px 9px rgba(0, 0, 0, 0.6);   /* Stronger center shadow for the outline effect */
+  
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+  
+  
+  .button-group {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .btn-danger {
+    background-color: #e74c3c;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+  }
+  
+  .btn-danger:hover {
+    background-color: #c0392b;
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.5);
+  }
+  
+  .btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+  }
+  
+  .btn-primary:hover {
+    background-color: #2980b9;
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.5);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .note-card {
+      max-width: 100%;
+      flex: 1 1 calc(50% - 24px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .note-card {
+      max-width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+ /* Styling for the user info container */
+.user-info {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+/* Style for the creator's name */
+.creator-name {
+  font-size: 0.8rem; /* Slightly smaller, elegant size */
+  font-weight: 900; /* Bold weight for clarity */
+  color: #000000; /* A neutral, sophisticated color */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, readable font */
+  text-transform: capitalize; /* Ensures proper case */
+
+}
+
+/* Style for the creator's age */
+.creator-age {
+  font-size: 0.9rem; /* Slightly smaller than name */
+  color: #40312a; /* Softer gray to differentiate it from the name */
+  font-weight: 750; /* Regular weight */
+  padding-left: 8px;
+  
+}
+
+.spantage{
+  font-size: .9rem; /* Slightly smaller, elegant size */
+  font-weight: 850; /* Bold weight for clarity */
+  color: #34495e; /* A neutral, sophisticated color */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, readable font */
+  text-transform: capitalize; /* Ensures proper case */
+  margin-left: 9px;
+
+}.backGroundImage {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden; /* Ensures background doesn't spill out */
+  min-height: 200px; /* Set a default height for the cards */
+  background-image: url('/public/assets/tower.jpeg');
+   /* Path to your image */
+  background-size: cover; /* Ensures the image covers the card entirely */
+  background-position: center; /* Centers the image in the card */
+  background-repeat: no-repeat; /* Prevents image from repeating */
+}
+
+
+.backGroundImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.3); /* Optional: Add an overlay to darken the image */
+  z-index: -1; /* Keeps the background behind the content */
+}
+.dark-brown-btn {
+  background-color: #6f4f28; /* Dark brown background color */
+  color: white; /* White text color */
+  padding: 1px 12px; /* Padding for the button */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+   /* Make the text bold to emphasize the delete action */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition on hover */
+}
+
+.dark-brown-btn:hover {
+  background-color: #4e3629; /* Darker shade of brown on hover */
+}
+
+.dark-brown-btn:focus {
+  outline: none; /* Remove outline on focus */
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Optional: add a subtle outline for focus */
+}
+.dark-red-btn {
+  background-color: #8B0000; /* Dark red background color */
+  color: white; /* White text color */
+  padding: 1px 12px; /* Padding for the button */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+   /* Make the text bold to emphasize the delete action */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition on hover */
+}
+
+.dark-red-btn:hover {
+  background-color: #6B0000; /* Darker red shade on hover */
+  transform: scale(1.05); /* Slight scale effect to make the button feel interactive */
+}
+
+.dark-red-btn:focus {
+  outline: none; /* Remove outline on focus */
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Optional: add a subtle outline for focus */
+}
+
+.btn-note {
+  background-color: #552c1d; /* A bright coral/orange color for contrast */
+  color: white; /* White text color */
+  font-size: 1rem;
+  padding: 12px 24px;
+  border: none;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds subtle shadow for depth */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.btn-note:hover {
+  background-color: #ff4500; /* Darker shade of orange on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.btn-note:focus {
+  outline: none; /* Removes the default outline */
+}

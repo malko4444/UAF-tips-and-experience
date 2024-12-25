@@ -1,0 +1,27 @@
+.App {
+    position: relative; /* Required for pseudo-element positioning */
+    min-height: 100vh;
+    overflow: hidden; /* Ensures no unintended scrollbars */
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-family: Arial, sans-serif;
+  }
+  
+  .App::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/public/assets/backGround.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1 ; /* Adjust this value for transparency (0 = transparent, 1 = opaque) */
+    z-index: -1; /* Keeps it behind the content */
+  }
+  
