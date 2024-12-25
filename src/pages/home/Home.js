@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getNotes, deleteNote, setUpdateNote } from '../../store/slices/notesSlice';
 import "./home.css";
+import Footer from '../../components/footer/Footer';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -76,6 +77,7 @@ export default function Home() {
           <p>No notes available.</p> // Handle empty state
         )}
       </div>
+      <Footer className="mt-2"/>
     </div>
   );
 }

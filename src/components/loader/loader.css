@@ -1,62 +1,66 @@
 .loader-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f4f4f9;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  .loader-icon {
-    font-size: 3rem;
-    color: #ffab00;
-    margin-bottom: 10px;
-    animation: fadeIn 1s ease-in-out infinite alternate;
-  }
-  
-  .loader-text {
-    font-size: 1.8rem;
-    color: #333;
-    display: flex;
-    gap: 5px;
-    animation: typing 2s steps(7) infinite;
-  }
-  
-  .loader-dots {
-    display: flex;
-    gap: 5px;
-    margin-top: 10px;
-  }
-  
-  .loader-dots span {
-    font-size: 1.5rem;
-    color: #333;
-    animation: bounce 0.6s infinite alternate;
-  }
-  
-  .loader-dots span:nth-child(1) {
-    animation-delay: 0s;
-  }
-  .loader-dots span:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  .loader-dots span:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-  
-  @keyframes fadeIn {
-    0% { opacity: 0.3; transform: scale(1); }
-    100% { opacity: 1; transform: scale(1.1); }
-  }
-  
-  @keyframes typing {
-    0%, 100% { color: #ddd; }
-    50% { color: #333; }
-  }
-  
-  @keyframes bounce {
-    from { transform: translateY(0); }
-    to { transform: translateY(-10px); }
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  background-color: transparent; /* Remove the white background */
+  font-family: 'Courier New', Courier, monospace;
+  z-index: 9999; /* Ensure it stays on top of other elements */
+  position: absolute; /* Position relative to the parent */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+}
+
+.loader-icon {
+  font-size: 3rem;
+  color: #f4e3d7; /* Light beige for contrast */
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out infinite alternate;
+}
+
+.loader-text {
+  font-size: 2.8rem;
+  color: #ffe4c4; /* Soft peach that stands out */
+  display: flex;
+  gap: 5px;
+  animation: typing 2s steps(7) infinite;
+}
+
+.loader-dots {
+  display: flex;
+  gap: 5px;
+  margin-top: 7px;
+}
+
+.loader-dots span {
+  font-size: 2.7rem;
+  color: #f4e3d7; /* Same light beige as the icon for consistency */
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loader-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+.loader-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loader-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes typing {
+  0%, 100% { color: #8b6f47; } /* Muted brown for a soft flicker effect */
+  50% { color: #ffe4c4; }
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
