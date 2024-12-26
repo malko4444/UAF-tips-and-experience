@@ -6,6 +6,8 @@ import Home from '../home/Home';
 import Login from '../../components/login/Login';
 import Signup from '../../components/signup/Signup';
 import PublicRoute from './PublicRoute';
+import About from '../about/About';
+
 function Routing() {
     return (
         <Router>
@@ -16,6 +18,12 @@ function Routing() {
                         <Home />
                     </PrivateRoute>
                     } />
+                <Route path="/about" element={
+                    <PrivateRoute>
+                        <About/>
+                    </PrivateRoute>
+                    } />
+                    
                 <Route path="/addNewNotes" element={
                     <PrivateRoute>
                     <AddNewNotes />

@@ -1,0 +1,230 @@
+/* General Page Styling */
+.about-page {
+    padding: 20px;
+    position: relative;
+    overflow-y: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Developer Intro Section */
+.developer-intro {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 60px; /* Added margin between sections */
+    padding: 30px 20px;
+    background: #8c5e3c; /* Dark brown background for developer section */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255, 239, 204, 0.85); /* Light brown with slight transparency */
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    flex: 1;
+    max-width: 400px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 204, 102, 0.6);
+}
+
+.card-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #e6b566;
+    margin-top: 20px;
+}
+
+.card-content h2 {
+    font-size: 1.8rem;
+    color: #5e4e3c; /* Dark brown color for the text */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin: 15px 0;
+}
+
+/* Project Details Section */
+.project-details {
+    background: linear-gradient(145deg, rgba(142, 92, 60, 0.9), rgba(113, 78, 51, 0.9)); /* Brownish gradient */
+    color: #f9f9f9;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 60px; /* Added margin at the bottom */
+}
+
+.project-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #e6b566; /* Light golden brown */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.project-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 20px;
+    color: #d4d4d4;
+}
+
+.project-features {
+    list-style-type: square;
+    text-align: left;
+    margin: 0 auto 20px auto;
+    max-width: 600px;
+    padding-left: 20px;
+    color: #f0e4cc;
+}
+
+.project-features li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #e6b566;
+}
+
+.project-summary {
+    font-size: 1.2rem;
+    color: #e6e6e6;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Tips & Experience Section */
+.uaftips-experience {
+    background: #d2b29e; /* Light brown background */
+    color: #5e4e3c; /* Dark brown text color */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 60px;
+}
+
+.tips-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #8c5e3c; /* Dark brown color for the title */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.tips-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+    color: #5e4e3c;
+}
+
+.tips-list {
+    list-style-type: square;
+    margin: 0 auto 20px auto;
+    max-width: 600px;
+    padding-left: 20px;
+    color: #5e4e3c;
+}
+
+.tips-list li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.tips-summary {
+    font-size: 1.2rem;
+    color: #5e4e3c;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Responsive Layout */
+@media only screen and (max-width: 768px) {
+    .developer-intro {
+        padding: 20px;
+    }
+
+    .project-details {
+        padding: 30px;
+    }
+
+    .uaftips-experience {
+        padding: 30px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 350px;
+        min-height: 350px;
+    }
+
+    .card-img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .card-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .project-title {
+        font-size: 2rem;
+    }
+
+    .project-description {
+        font-size: 1.1rem;
+    }
+
+    .project-features li {
+        font-size: 1rem;
+    }
+
+    .project-summary {
+        font-size: 1.1rem;
+    }
+
+    .tips-title {
+        font-size: 2.2rem;
+    }
+
+    .tips-description {
+        font-size: 1.2rem;
+    }
+
+    .tips-list li {
+        font-size: 1rem;
+    }
+
+    .tips-summary {
+        font-size: 1.1rem;
+    }
+}
